@@ -7,9 +7,9 @@ def call() {
             }
         }
 
-        options {
-            ansicolor('xterm')
-        }
+//        options {
+//            ansicolor('xterm')
+//        }
 
         parameters {
             choice(name: 'env', choices: ['dev', 'prod'], description: 'Pick environment')
