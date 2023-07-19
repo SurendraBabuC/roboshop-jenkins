@@ -1,6 +1,3 @@
-- name: Create Job Block
-  loop: "{{sjobs}}"
-  block:
 - name: Copy XML File
   ansible.builtin.template:
     src: sjob.xml
