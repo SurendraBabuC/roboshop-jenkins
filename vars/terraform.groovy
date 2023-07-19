@@ -23,12 +23,15 @@ def call() {
                 }
             }
 
-            stage('Terraform Apply') {}
-            steps {
-                sh 'terraform apply -auto-approve -var-file=env-${env}/maintfvars'
+            stage('Terraform Apply') {
+                steps {
+                    sh 'terraform apply -auto-approve -var-file=env-${env}/maintfvars'
+                }
             }
 
         }
+
+
 
         post {
             always {
