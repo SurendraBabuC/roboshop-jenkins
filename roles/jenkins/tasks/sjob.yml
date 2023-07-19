@@ -1,7 +1,17 @@
+- name: Copy if the jenkins job exists or not
+  community.general.jenkins_job_info:
+    name: "{{item.job_name}}"
+    user: admin
+    password: admin123
+    url: http://172.31.8.150:8080
+  register: jenkins_job_status
+  ignore_errors: true
+
 - name: Copy XML File
   ansible.builtin.template:
     src: sjob.xml
     dest: /tmp/test.xml
+  when: jenkins_job_status.failed
 
 - name: Create a jenkins job
   community.general.jenkins_job:
@@ -10,3 +20,4 @@
     password: admin123
     url: http://172.31.8.150:8080
     user: admin
+  when: jenkins_job_status.failed
