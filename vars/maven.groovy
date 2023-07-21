@@ -15,13 +15,13 @@ def call() {
 
             stage('Code Compile') {
                 steps {
-                    sh 'echo Code Compile'
+                    sh 'mvn compile'
                 }
             }
 
             stage('Code Quality') {
                 steps {
-                    sh 'echo Code Quality'
+                    sh 'sonar-scanner -Dsonar.projectKey=${component} -Dsonar.host.url=http://172.31.88.90:9000 -Dsonar.login=admin -Dsonar.password=admin123 -Dsonar.qualitygate.wait=true'
                 }
             }
 
