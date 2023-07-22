@@ -17,8 +17,8 @@
         <abortBuilds>false</abortBuilds>
     </orphanedItemStrategy>
     <triggers>
-        <com.igalg.jenkins.plugins.mswt.trigger.ComputedFolderWebHookTrigger plugin=                                                                                                             "multibranch-scan-webhook-trigger@1.0.9">
-            <spec></spec>
+        <com.igalg.jenkins.plugins.mswt.trigger.ComputedFolderWebHookTrigger plugin="multibranch-scan-webhook-trigger@1.0.9">
+            <spec/>
             <token>{{ item.job_name }}</token>
         </com.igalg.jenkins.plugins.mswt.trigger.ComputedFolderWebHookTrigger>
     </triggers>
